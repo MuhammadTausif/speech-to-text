@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>Speech to Text</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Speech to Text!</h1>
+        <p> Please click on the green button to start</p>
+        <div class="row">
+            <div class="col-sm-12 col-centered" style="background-color:lavenderblush;">
+
+                <p>Click the start button below to begin the demonstration.</p>
+                <div id="startButton" class="button">
+                    Start me.
+                </div>
+                <audio id="audio" autoplay controls></audio><br>
+                <div id="log"></div>
+            </div>
+            <div class="col-sm-4" style="background-color:lavender;">.col-sm-4</div>
+            <div class="col-sm-4" style="background-color:lavenderblush;">.col-sm-4</div>
+            <div class="col-sm-4" style="background-color:lavender;">.col-sm-4</div>
+        </div>
+    </div>
+</body>
+
+<script>
+    let audioElement = document.getElementById("audio");
+    document.getElementById("startButton").addEventListener("click", function () {
+        navigator.mediaDevices.getUserMedia({
+            audio: true
+        }).then(stream => audioElement.srcObject = stream)
+    }, false);
+</script>
+
+</html>
