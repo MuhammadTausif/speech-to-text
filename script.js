@@ -48,6 +48,18 @@ recognition.onresult = function (event) {
     if (!mobileRepeatBug) {
         noteContent += transcript;
         noteTextarea.val(noteContent);
+        // custom code
+        console.log(noteTextarea.val());
+        var source = $('#source-text');
+        if( noteTextarea.val() != $('#source-text').val())
+        {
+            console.log('Not equal');
+            
+        }
+        else {
+            console.log('Equal');
+        }
+
     }
 };
 
@@ -76,6 +88,9 @@ $('#start-record-btn').on('click', function (e) {
         noteContent += ' ';
     }
     recognition.start();
+    // $('#start-record-btn').hide();
+    // $('#pause-record-btn').show();
+    
     // making wave of sound
     makeWave();
 });
@@ -83,6 +98,8 @@ $('#start-record-btn').on('click', function (e) {
 
 $('#pause-record-btn').on('click', function (e) {
     recognition.stop();
+    // $('#start-record-btn').show();
+    // $('#pause-record-btn').hide();
     instructions.text('Voice recognition paused.');
 });
 

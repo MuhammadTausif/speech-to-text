@@ -11,7 +11,6 @@
     <link rel="shortcut icon" type="image/x-icon" href="./data/music.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shoelace-css/1.0.0-beta16/shoelace.css">
     <link rel="stylesheet" href="styles.css">
-
 </head>
 
 <body>
@@ -19,22 +18,25 @@
         <div>
             <img src="./data/Ciao.png" style="width:100%; margin-top: -70px" alt="Listen" />
         </div>
-        <div id="source-text" style="font-size:2em; margin:0.1em">
-            This is source Text
-        </div>
+        <!-- This is source Text -->
+        <input type="text" id="source-text" style="font-size:2em; margin:0.1em" value="ہیلو"/> یہ سیمپل ٹیکسٹ ہے
         <div class="input-single">
             <textarea id="note-textarea" placeholder="Create a new note by typing or using voice recognition." rows="3"></textarea>
         </div>
         <div>
             <img src="./data/micro.png" id="start-record-btn" alt="micro" />
         </div>
+        <div>
+            <img src="./data/micro.png" hidden id="pause-record-btn" alt="micro" />
+        </div>
+        <p id="recording-instructions">Press the <strong>Start Recognition</strong> button and allow access.</p>
         <div id="waveform"></div>
         <div>
             <img src="./data/speech recognition.png" id="wave" alt="Wave" />
         </div>
     </div>
-    
-    
+
+
     <script src="https://unpkg.com/wavesurfer.js"></script>
     <script src="./data/wavesurfer.microphone.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
